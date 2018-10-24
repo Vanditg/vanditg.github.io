@@ -19,10 +19,13 @@ h1 {
 h2 {
 	font-family: 'Courier New';
 	font-size:22pt;
+	
 }
 
 h3 {
-  	font-size:14pt;
+  	font-family: 'Courier New';
+	font-size:14pt;
+	color: #FF0000;
 }
 
 
