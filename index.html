@@ -33,7 +33,27 @@
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
+  <!-- block visibility -->
+  function showBlock(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function hideBlock(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+  function toggleBlock(id) {
+    if (document.getElementById(id).style.display == 'none') {
+      document.getElementById(id).style.display = 'block';
+    } else {
+      document.getElementById(id).style.display = 'none';
+    }
+  }
+  <!-- publication visibility -->
+  function showAllPublications() {
+    document.getElementById('pubsTable').className = 'paperTable showAll';
+  }
+  function showSelectedPublications() {
+    document.getElementById('pubsTable').className = 'paperTable showSelected';
+  }
 </script>
 
 
@@ -48,10 +68,10 @@
             <p align="center">&nbsp;</p>
 
             <p align="center"><font size="6px">Vandit Gajjar</font>
-			<p align="center"><font size="4px">vandit.gajjar@ahduni.edu.in | gajjar.vandit.381@ldce.ac.in | gajjarvandit@gmail.com</font>
+			<p align="center"><font size="4px">vanditjyotindra.gajjar@student.adelaide.edu.au | gajjarvandit@gmail.com</font>
              
-            <p align="center"> I am a Teaching Assistant & Computer Vision Researcher at <a href="https://ahduni.edu.in/">Ahmedabad University</a>. I hold a B.E. in Electronics and Communication Engineering from <a href="http://ldce.ac.in/"> L. D. College of Engineering</a>. In addition, I am also a co-founder of <a href="https://cvgldce.wordpress.com/">Computer Vision Group – LDCE</a>, which focuses on problems of Computer Vision & Deep Learning.</p>
-			<p align="center"> In the past, I have worked with <a href="https://sites.google.com/view/mehul-s-raval/home?authuser=0"> Dr. Prof. Mehul S. Raval</a> on “Description Based Person Identification in Unconstrained Surveillance” and "Person Retrieval". Currently, I'm working with my <a href="https://cvgldce.wordpress.com/">CVG-LDCE</a> team on the domain of Computer Vision and Deep Learning, solving the problem of "Person Retrieval in Video Surveillance using Semantic Description".</p>
+            <p align="center"> I am a Graduate Student studying <a href="https://www.adelaide.edu.au/degree-finder/mcomi_mcompinnov.html#df-acc-careers_parent"> Master of Computing and Innovation</a> at <a href="https://www.adelaide.edu.au/">The University of Adelaide</a>. I hold a B.E. in Electronics and Communication Engineering from <a href="http://ldce.ac.in/"> L. D. College of Engineering</a>. Also, I am one of the founding members of <a href="https://cvgldce.wordpress.com/">Computer Vision Group – LDCE</a>, which focuses on problems of Computer Vision & Deep Learning.</p>
+			<p align="center"> In the past, I have worked with <a href=https://sites.google.com/view/mehul-s-raval"> Mehul S. Raval</a> and <a href="https://scholar.google.co.in/citations?user=8xZcpSEAAAAJ&hl=enon"> Hiren Galiyawala</a> on “Description Based Person Identification in Unconstrained Surveillance”. </p>
 
             </p>
 				 <p align="center"> My <a href="pdf/CV_Vanditg.pdf"><img src="icons/cv.png" height="16"></a> / 
@@ -70,26 +90,48 @@
     <table width="90%" border="0" align="center" cellpadding="20">
     <h2>News</h2>
       <div class="news">
-        <ul>
+        
+		<ul style="margin-top:0; margin-bottom:0;">
+		<!-- add news here -->
+		<li align="justify"><span> I will serve as a reviewer for <a href="http://wacv20.wacv.net/">Winter Conference on Applications of Computer Vision (WACV) - 2020</a>.
+		 <li align="justify"><span> I have recieved <a href="pdf/UNI_OFFER.pdf">letter of offer</a> from <a href="https://www.adelaide.edu.au/">The University of Adelaide</a> for <a href="https://www.adelaide.edu.au/degree-finder/mcomi_mcompinnov.html">Master of Computing and Innovation</a> graduate coursework. In addition, I'm also a recipient of <a href="https://international.adelaide.edu.au/admissions/scholarships/the-2019-university-of-adelaide-global-citizens-scholarship-international">The 2019 University of Adelaide Global Citizens Scholarship</a>.
 		<li align="justify"><span> I will serve as a reviewer for <a href="http://iccv2019.thecvf.com/">International Conference on Computer Vision (ICCV) - 2019</a>.  
-        <li align="justify"><span> I have recieved <a href="pdf/UNI_OFFER.pdf">letter of offer</a> from <a href="https://www.adelaide.edu.au/">The University of Adelaide</a> for <a href="https://www.adelaide.edu.au/degree-finder/mcomi_mcompinnov.html">Master of Computing and Innovation</a> graduate coursework. In addition, I'm also a recipient of <a href="https://international.adelaide.edu.au/admissions/scholarships/the-2019-university-of-adelaide-global-citizens-scholarship-international">The 2019 University of Adelaide Global Citizens Scholarship</a>.
-		<li align="justify"><span> I will be extending my Teaching Assistant tenure by 6 months at <a href="https://ahduni.edu.in/">Ahmedabad University</a>, co-teaching Advanced Statistics, Introduction to Computation and Programming Lab, and Machine Learning.</span></li>
-		<li align="justify"><span> One paper accepted at <a href="http://wacv19.wacv.net/">IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)</a> 2019 at Hilton Waikoloa Village, Hawaii, USA. Pre-procedding is available <a href="pdf/WACV.pdf">here</a>. Full Oral Presentation can be found <a href="presentation/355_Resized.mp4">here.</a></span></li>
+
+		</ul>
+		<div id="news" class="blockDetails" style="display: block;">
+		<br/>[ <a href="#" onClick="hideBlock('news'); showBlock('allnews'); return false;">more</a> ]
+		</div>
+		
+		<div id="allnews" style="display: none;">
+		<ul style="margin-top:0; margin-bottom:0;">
+		<!-- move old news here -->
+		<li align="justify"><span> I will be extending my Teaching Assistant tenure by 6 months at <a href="https://ahduni.edu.in/">Ahmedabad University</a>, co-teaching Advanced Statistics, Introduction to Computation and Programming Lab, Machine Learning, and Probability and Random Processes.</span></li>
+		<li align="justify"><span> One paper accepted at <a href="http://wacv19.wacv.net/">IEEE Winter Conference on Applications of Computer Vision (WACV)</a> 2019 at Hilton Waikoloa Village, Hawaii, USA. Pre-procedding is available <a href="pdf/WACV.pdf">here</a>. Full Oral Presentation can be found <a href="presentation/355_Resized.mp4">here.</a></span></li>
 		<li align="justify"><span> Our team submission entry got selected and ranked 3rd in <a href="https://semanticsbsearch.wordpress.com/">Semantic Person Retrieval in Surveillance using Soft Biometrics Challenge </a> in Conjunction with <a href="https://avss2018.org/">IEEE International Conference on Advanced Video and Signal-based Surveillance(AVSS), 2018 Auckland, New Zeland.</a> Pre-print is available <a href="https://arxiv.org/abs/1810.05080">here.</a> Full oral presentation can be found <a href="presentation/AVSS.ppsx">here.</a></span></li>
         <li align="justify"><span> I will be spending next 6 months as a <a href="pdf/TA_Offer.pdf">Teaching Assistant </a> at <a href="https://ahduni.edu.in/">Ahmedabad University</a>, co-teaching Computer Vision, Deep Learning, and Signals & Systems.</span></li>
 		<li align="justify"><span> One paper accepted at <a href="http://cvpr2018.thecvf.com/program/workshops">IEEE/CVF Computer Vision and Pattern Recognition Workshops (CVPRw) </a>2018, Salt-Lake City, Utah. </span></li>
         <li align="justify"><span> I will serve as a reviewer for <a href="https://sites.google.com/site/mbcc2018w/home?authuser=0">Mutual Benefits of Cognitive and Computer Vision Workshop</a> in Conjunction with <a href="http://cvpr2018.thecvf.com/">Computer Vision and Pattern Recognition (CVPR)</a> 2018, Salt-Lake City, Utah. </span></li>
 		<li align="justify"><span> In November 2017, I joined <a href="https://https://www.meditab.com/">Meditab AI Research</a> for the 6-month winter internship program. </span></li>
         <li align="justify"><span> One paper accepted at <a href="http://iccv2017.thecvf.com/program/workshops">IEEE/CVF International Conference on Computer Vision Workshops (ICCVw) </a>2017, Venice, Italy. </span></li>
-		<li align="justify"><span> In August 2017, I joined <a href="https://ahduni.edu.in/">Ahmedabad University </a>as a Computer Vision Researcher. </span></li>
+		<li align="justify"><span> In September 2017, I joined <a href="https://ahduni.edu.in/">Ahmedabad University </a>as a Visiting Student. </span></li>
 		<li align="justify"><span> In May 2017, we started the <a href="https://cvgldce.wordpress.com/">Computer Vision Group - LDCE </a>at L. D. College of Engineering. </span></li>         
 
         </ul>
+		<div class="blockDetails">
+		<br/>[ <a href="#" onClick="hideBlock('allnews'); showBlock('news'); return false;">less</a> ]
+		</div>
+		<div class="linktop"><a href="#top">&#x25b2;top</a></div>
+		</div>
+
+		</div>
+		
+
 
       </div>
     </table>
   </div>
   <br>
+  
  
  
   <div class="container">
@@ -103,18 +145,16 @@
             <p align="justify"><li><span>How human vision works to recognize object/object category with less number of samples?</span></li></p>
             <p align="justify"><li><span>What makes human vision so effective?</span></li></p>
             <p align="justify"><li><span>What can we learn from the human vision?</span></li></p>
-            <p align="justify"><li><span>How can we improve object recognition/segmentation with the help of human vision system?</span></li></p>
         </ul>
-			<p align="justify">Thus with the intention of finding the answers, I do research and develop methods for how to use Cognitive and Computer Vision to benefit each other. I collaborate with great minds to understand this research field deeply.</p>
-			<p align="justify">I have been also working on understanding vision from person’s perspective, such topics include:</p>
+			<p align="justify">Thus intending to find the answers, I do research and develop methods for how to use Cognitive and Computer Vision to benefit each other. I have been also working on understanding vision from person’s perspective, such topics include:</p>
 		<ul>
-            <p align="justify"><li><span>Activity recognition, Video Classification and Person identification based on the provided description in extremely dense scenes.</span></li></p>
+            <p align="justify"><li><span>Person identification based on the provided description in extremely dense scenes.</span></li></p>
             <p align="justify"><li><span>Human Detection, Pose Estimation and Tracking in surveillance vision.</span></li></p>
 			<p align="justify"><li><span>Person Retrieval in Video Surveillance using Semantic Description.</span></li></p>
         </ul>
-			<p align="justify">Therefore in the Past, I have spent time at <a href="https://ahduni.edu.in/">Ahmedabad University</a>, <a href="http://www.meditab.com/">Meditab Software Inc.,</a> <a href="https://www.k-state.edu/"> Kansas State University</a>, and <a href="https://gturobocon.wixsite.com/home"> GTU Robocon Team</a>, where I worked with <a href="https://scholar.google.co.in/citations?user=8xZcpSEAAAAJ&hl=en&oi=ao"> Hiren Galiyawala</a>, <a href="https://www.linkedin.com/in/kenil-shah-583027130/">Kenil Shah</a>, <a href="https://www.linkedin.com/in/yash-khandhediya-8b0aa8131/">Yash Khandhediya</a>, <a href="https://www.ece.k-state.edu/people/faculty/day/index.html"> Dr. Prof. Dwight Day</a>, <a href="https://www.linkedin.com/in/kim-fowler-ab825b5/"> Dr. Prof. Kim Fowler</a> and<a href="https://www.linkedin.com/in/raj-hakani-34a68a35/"> Prof. Raj Hakani</a> on several projects.</p>  
-			<p align="justify">I am committed to increasing undergraduates participation in the field of Computer Vision and have worked for last two years to motivate undergraduates in computing. To this end, I and my colleague have co-founded Computer Vision Group – LDCE, which focuses on increasing undergraduates knowledge and participation in Computer Vision and Deep Learning Research. Interested to collaborate or join our vision group? Email any of the CVG-LDCE members with the project proposal.</p>
-           	<p align="justify"> In my free time, I used <a href="https://twitter.com/vandit_25">Twitter </a> the most, and I also use <a href="https://www.instagram.com/vandit25/?hl=en">Instagram </a> to post some of my travel photographs.</p>
+			<p align="justify">Therefore in the Past, I have spent time at <a href="https://ahduni.edu.in/">Ahmedabad University</a>, <a href="http://www.meditab.com/">Meditab Software Inc.</a>, <a href="https://www.k-state.edu/">Kansas State University</a>, and <a href="https://gturobocon.wixsite.com/home"> GTU Robocon Team</a>, where I worked with <a href="https://scholar.google.co.in/citations?user=8xZcpSEAAAAJ&hl=en&oi=ao"> Hiren Galiyawala</a>, <a href="https://www.linkedin.com/in/kenil-shah-583027130/">Kenil Shah</a>, <a href="https://www.linkedin.com/in/yash-khandhediya-8b0aa8131/">Yash Khandhediya</a>, <a href="https://www.ece.k-state.edu/people/faculty/day/index.html"> Dwight Day</a>, <a href="https://www.linkedin.com/in/kim-fowler-ab825b5/"> Kim Fowler</a> and<a href="https://www.linkedin.com/in/raj-hakani-34a68a35/"> Raj Hakani</a> on several projects.</p>  
+			<p align="justify">For the last two years, I have worked to address the underrepresentation of undergraduates in the field of Computer Vision and have motivated undergraduates in the computing field. To this end, I and my colleague have co-founded Computer Vision Group – LDCE, which focuses on increasing undergraduates knowledge and participation in Computer Vision and Deep Learning Research. Interested to collaborate or join our vision group? Email any of the CVG-LDCE members with the project proposal.</p>
+           	<p align="justify"> In my free time, I use <a href="https://twitter.com/vandit_25">Twitter </a>the most and sometimes I also use <a href="https://www.instagram.com/vandit_25/?hl=en">Instagram </a> to post some of my travel photographs.</p>
     	</div>
         </ul>
       </div>
@@ -131,7 +171,7 @@
         <td width="75%" valign="top">
           <p><a href="pdf/WACV.pdf"><heading>SAF- BAGE: Salient Approach for Facial Soft-Biometric Classification - Age, Gender, and Facial Expression</heading></a><br>
           <a href="https://www.linkedin.com/in/ayeshagurnani/"> Ayesha Gurnani*</a>, <a href="https://www.linkedin.com/in/kenil-shah-583027130/"> Kenil Shah*</a>, <strong>Vandit Gajjar*</strong>, <a href="https://virajmavani.github.io/"> Viraj Mavani*</a>, <a href="https://www.linkedin.com/in/yash-khandhediya-8b0aa8131/"> Yash Khandhediya*</a><br>
-          <em>IEEE Winter Conference on Applications of Computer Vision (WACV), 2019<strong></em> (Oral)</strong><em> and Invited long-talk at <a href="http://34.226.68.78/workshop-program/">Workshop on Demographic Variations in Performance of Biometric Algorithms</a> in conjunction with IEEE WACV 2019.</em><br>
+          <em>IEEE Winter Conference on Applications of Computer Vision (WACV), 2019<strong></em> (Oral)</strong><em> and Invited long-talk at <a href="http://wacv19.wacv.net/workshops/">Workshop on Demographic Variations in Performance of Biometric Algorithms</a> in conjunction with IEEE WACV 2019.</em><br>
 		  <strong>* Authors are listed alphabetically and have contributed equally.</strong>
 		  
           <div class="paper" id="WACV">
@@ -187,11 +227,8 @@ year = {2018}}
 		  <a href="https://tnw.to/I1gTz"><img src="Media_C/TNW.png" width="40" height="40" style="border-style:none"></a>
 		  <a href="https://goo.gl/Yb2FaW"><img src="Media_C/MTE.png" width="50" height="20" style="border-style:none"></a>
 		  <a href="https://goo.gl/ZBn4Bs"><img src="Media_C/TL.png" width="40" height="40" style="border-style:none"></a>
-          <a href="https://goo.gl/UFY9x2"><img src="Media_C/TRP.png" width="50" height="20" style="border-style:none"></a>
           <a href="https://goo.gl/rniz3N"><img src="Media_C/OP.png" width="40" height="40" style="border-style:none"></a>
           <a href="https://goo.gl/SY8Lux"><img src="Media_C/JC.png" width="50" height="10" style="border-style:none"></a>
-          <a href="https://goo.gl/U1YuDc"><img src="Media_C/IS.png" width="40" height="40" style="border-style:none"></a>
-		  <a href="http://www.latestcommentary.com/this-ai-can-search-for-people-by-height-gender-and-clothing-in-surveillance-videos/"><img src="Media_C/LC.png" width="50" height="20" style="border-style:none"></a>
           <a href="https://goo.gl/XAvc4q"><img src="Media_C/BR.png" width="40" height="40" style="border-style:none"></a>
           <a href="https://inshorts.com/en/news/indian-teams-ai-finds-people-in-videos-via-clothes-height-1540395247981"><img src="Media_C/ISH.png" width="40" height="15" style="border-style:none"></a>	
           <a href="https://goo.gl/9HbkgV"><img src="Media_C/RT.png" width="35" height="40" style="border-style:none"></a>
