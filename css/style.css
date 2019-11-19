@@ -3,29 +3,29 @@
  
 body {
 	/*background: #f7f7f7;*/
-	background: #00FFFF;
-	color: #FFFFFF;
+	background: #FFFFFF;
+	color: #00FFFF;
     font-family: 'Bell MT' ,Verdana, Helvetica, sans-serif;;
     font-weight: 300;
-	font-size:16px;
+	font-size:18px;
 }
 
 /* Headings */
 
 h1 {
-  	font-size:30pt;
+  	font-size:35pt;
 }
 
 h2 {
 	font-family: 'Courier New';
-	font-size:22pt;
+	font-size:25pt;
 	
 }
 
 h3 {
   	font-family: 'Courier New';
-	font-size:14pt;
-	color: #FF0000;
+	font-size:20pt;
+	color: #1500FF;
 }
 
 
@@ -42,7 +42,7 @@ a:visited {
 }
 
 a:active {
-  color: red;
+  color: green;
   text-decoration: none;
 }
 
@@ -124,10 +124,11 @@ mark {
 
 .paper {
 	clear: both;
-  width: 700px;
+    width: 700px;
+	min-height: 20px;
 	margin: 0 auto; /* top and bottom, right and left */
-	border: 1px hidden #000;
-	/* border: none; */
+	/* border: 1px hidden #000; */
+	border: none; 
 	text-align: left;
 	padding: 1em 1em 1em 1em; /* top, right, bottom, left */
 	color: #4d4b59;
@@ -168,7 +169,7 @@ mark {
 
 table.schedule {
 	border-width: 1px;
-	border-spacing: 2px;
+	border-spacing: 5px;
 	border-style: none;
 	border-color: #000;
 	border-collapse: collapse;
@@ -214,7 +215,7 @@ table.psets {
 }
 
 .instructorphoto img {
-  width: 210px;
+  width: 200px;
   border-radius: 210px;
   margin-bottom: 10px;
 }
